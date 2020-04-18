@@ -2,7 +2,7 @@
   <div :class="['vue-tel-input', wrapperClasses, { disabled: disabled }]">
     <div
       v-click-outside="clickedOutside"
-      :class="['vti__dropdown', { open: open }]"
+      :class="['vti__dropdown', dropdownClasses, { open: open }]"
       :tabindex="dropdownOptions && dropdownOptions.tabindex ? dropdownOptions.tabindex : 0"
       @keydown="keyboardNav"
       @click="toggleDropdown"
@@ -185,6 +185,10 @@ export default {
     wrapperClasses: {
       type: [String, Array, Object],
       default: () => getDefault('wrapperClasses'),
+    },
+    dropdownClasses: {
+      type: [String, Array, Object],
+      default: () => getDefault('dropdownClasses'),
     },
   },
   data() {

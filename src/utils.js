@@ -58,6 +58,7 @@ export const defaultOptions = {
   required: false,
   validCharactersOnly: false,
   wrapperClasses: '',
+  dropdownClasses: '',
 };
 
 export default {
