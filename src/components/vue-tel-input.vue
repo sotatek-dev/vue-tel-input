@@ -2,7 +2,7 @@
   <div :class="['vue-tel-input', wrapperClasses, { disabled: disabled }]">
     <div
       v-click-outside="clickedOutside"
-      :class="['vti__dropdown', dropdownClasses, { open: open }]"
+      :class="[dropdownClasses, 'vti__dropdown', { open: open }]"
       :tabindex="dropdownOptions && dropdownOptions.tabindex ? dropdownOptions.tabindex : 0"
       @keydown="keyboardNav"
       @click="toggleDropdown"
@@ -594,6 +594,16 @@ export default {
   padding: 7px;
   cursor: pointer;
 }
+.tel-dropdown.vti__dropdown {
+  padding: 7px 15px;
+  height: 50px;
+  min-width: 80px;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border: 1px solid #cfcfcf;
+}
 .vti__dropdown.show {
   max-height: 300px;
   overflow: scroll;
@@ -601,8 +611,14 @@ export default {
 .vti__dropdown.open {
   background-color: #f3f3f3;
 }
+.tel-dropdown.vti__dropdown.open {
+  background-color: #fff;
+}
 .vti__dropdown:hover {
   background-color: #f3f3f3;
+}
+.tel-dropdown.vti__dropdown:hover {
+  background-color: #fff;
 }
 .vti__selection {
   font-size: 0.8em;
